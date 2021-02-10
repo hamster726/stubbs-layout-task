@@ -1,0 +1,10 @@
+@import "base/variables";
+
+@import "libs/bootstrap-reboot.min.css";
+@import "blocks/header";
+
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
