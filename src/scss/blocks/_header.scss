@@ -94,17 +94,38 @@
     display: flex;
     align-items: flex-end;
     margin-right: 33px;
-
-
   }
 
   &__search-panel {
+    display: none;
+    //display: flex;
     position: absolute;
     bottom: -51px;
-    right: -10px;
-    display: flex;
+    right: -25px;
     justify-content: space-around;
     align-items: center;
+    input[type="text"] {
+      width: 314px;
+      height: 41px;
+      padding: 10px 40px 10px 31px;
+      border: none;
+      border-radius: 0;
+    }
+    button {
+
+      position: absolute;
+      padding: 0;
+      height: 18px;
+      width: 18px;
+      right: 9px;
+      background-color: transparent;
+      border: none;
+
+      img {
+        width: 100%;
+        vertical-align: top;
+      }
+    }
   }
 
     &__lang {
@@ -140,10 +161,11 @@
     }
 
     &__lang-list {
+      display: none;
+      //display: flex;
       position: absolute;
       top: 42px;
       left: -10px;
-      display: flex;
       height: 82px;
       width: 51px;
       padding: 10px 10px 15px 10px;
