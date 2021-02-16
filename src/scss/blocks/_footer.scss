@@ -1,0 +1,145 @@
+.footer {
+  padding: 20px 0 20px 0;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 55px;
+    left: 415px;
+    top: 0px;
+    background: #E4B56B;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 55px;
+    right: 445px;
+    top: 0px;
+    background: #E4B56B;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__title {
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #3E3E3E;
+  }
+  &__link {
+    display: block;
+    margin-top: 15px;
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #AEAEAE;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  &__about {
+    width: 325px;
+    flex: 33.33%;
+    &__menu {
+      margin-top: 20px;
+      display: flex;
+      justify-content: left;
+      flex-direction: column;
+    }
+  }
+  &__advantages {
+    flex: 33.33%;
+    &__menu {
+      margin-top: 20px;
+      width: 465px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+
+  &__contacts {
+    display: flex;
+    flex: 33.33%;
+    div {
+      margin-left: auto;
+    }
+    address {
+      margin-top: 9px;
+      margin-bottom: 0;
+      font-family: Raleway, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 21px;
+      color: #3E3E3E;
+    }
+
+    &__working {
+      margin-top: 15px;
+      font-family: Raleway, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 21px;
+      color: #3E3E3E;
+    }
+    &__phone {
+      display: block;
+      margin-top: 15px;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 21px;
+      color: #3E3E3E;
+    }
+    &__social {
+      margin-top: 15px;
+      display: flex;
+      a {
+        margin-right: 15px;
+        width: 21px;
+        height: 21px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  .developer {
+    display: block;
+    width: 95px;
+    margin: 50px auto 0;
+    font-family: HelveticaNeueCyr, sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    color: #3E3E3E;
+    span {
+      font-family: Roboto;
+      font-weight: 500;
+      line-height: 17px;
+    }
+
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}

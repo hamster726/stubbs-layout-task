@@ -1,0 +1,82 @@
+.about {
+  &__why {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 32px;
+    width: 100%;
+    min-height: 380px;
+    background: no-repeat center/cover url("../../images/about/why-we.png");
+
+
+    &__wrapper {
+      position: relative;
+      width: 750px;
+      height: 260px;
+      padding: 20px 115px 0 90px;
+      background: rgba(62, 62, 62, 0.9);
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 212px;
+        background: #E4B56B;
+        right: 78px;
+        top: 0;
+      }
+    }
+  }
+
+  &__advantages {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    min-height: 380px;
+    background: no-repeat center/cover url("../../images/about/advantages.png");
+
+
+    &__wrapper {
+      margin-left: auto;
+      position: relative;
+      width: 750px;
+      height: 260px;
+      padding: 20px 90px 0 115px;
+      background: rgba(62, 62, 62, 0.9);
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 212px;
+        background: #E4B56B;
+        left: 78px;
+        top: 0;
+      }
+    }
+  }
+
+  &__title {
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 60px;
+    text-align: left;
+    color: #FFFFFF;
+  }
+
+  &__descr {
+    margin-top: 25px;
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #FFFFFF;
+
+  }
+}

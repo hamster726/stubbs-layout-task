@@ -10,7 +10,7 @@ const Banner = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     adaptiveHeight: false,
-    arrows: false
+    arrows: false,
   };
 
   return (
@@ -30,8 +30,9 @@ const Banner = () => {
         </div>
       </Slider>
       <div className="banner__title">
-        <div className="banner__descr">Высокоточное изготовление изделий из металла по чертежам
-        </div>
+        <h1 className="banner__descr">
+          Высокоточное изготовление изделий из металла по чертежам
+        </h1>
       </div>
     </div>
   );

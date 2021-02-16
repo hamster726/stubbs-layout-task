@@ -1,6 +1,11 @@
 .services {
   padding: 30px 0 40px 0;
-  position: relative;
+  overflow: hidden;
+  .container {
+    position: relative;
+
+
+  }
   &__cards {
     margin-top: 42px;
     display: flex;
@@ -79,14 +84,41 @@
     }
   }
 
-  .gear-1 {
-    display: block;
-    width: 100px;
-    height: 100px;
+  .gear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 239px;
+    height: 239px;
     position: absolute;
-    left: 50%;
-    top: 50%;
+    z-index: -1;
 
-    z-index: 999;
+    svg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .gear-1 {
+    top: 200px;
+    left: -95px;
+  }
+  .gear-2 {
+    top: 420px;
+    left: -80px;
+    width: 206px;
+    height: 206px;
+  }
+  .gear-3 {
+    top: 200px;
+    right: -95px;
+    width: 206px;
+    height: 206px;
+  }
+  .gear-4 {
+    top: 420px;
+    right: -80px;
   }
 }
