@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logoImg from "../../images/header/logo.png";
 import uaImg from "../../images/header/lang-ua.png";
 import ruImg from "../../images/header/lang-ru.png";
@@ -7,6 +7,42 @@ import searchImg from "../../images/header/search-icon.svg";
 import vectorImg from "../../images/header/vector.svg";
 
 const Header = () => {
+  const [searchValue, setSearchValue] = useState("");
+
+  const toggleSearchPanel = (e) => {
+    e.stopPropagation();
+    const searchPanel = document.querySelector(".header__search-panel");
+    if (searchPanel.style.display) {
+      searchPanel.style.display = "";
+    } else {
+      searchPanel.style.display = "flex";
+    }
+  };
+
+  const searchMeSomething = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setSearchValue("");
+    toggleSearchPanel(e);
+
+    //doing search magic
+  };
+
+  const handleChange = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+  const toggleLangPanel = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    const langPanel = document.querySelector(".header__lang__lang-list");
+    if (langPanel.style.display) {
+      langPanel.style.display = "";
+    } else {
+      langPanel.style.display = "flex";
+    }
+  };
+
   return (
     <>
       <header className="header">
@@ -45,15 +81,27 @@ const Header = () => {
               </ul>
             </div>
             <div className="header__search-lang-panel">
-              <div className="header__search">
+              <button
+                className="header__search"
+                onClick={toggleSearchPanel}
+                onBlur={toggleSearchPanel}
+              >
                 <img src={searchImg} alt="search" />
-                <form className="header__search-panel">
-                  <input type="text" placeholder="Поиск..." />
-                  <button>
+                <form
+                  className="header__search-panel"
+                  onSubmit={searchMeSomething}
+                >
+                  <input
+                    type="text"
+                    placeholder="Поиск..."
+                    onChange={handleChange}
+                    value={searchValue}
+                  />
+                  <button type="submit">
                     <img src={searchImg} alt="search" />
                   </button>
                 </form>
-              </div>
+              </button>
               <div className="header__lang">
                 <div className="header__lang__chosen-lang">
                   <img src={ruImg} alt="flag ru" />
@@ -62,7 +110,11 @@ const Header = () => {
                   <img src={uaImg} alt="flag ua" />
                   <img src={ukImg} alt="flag uk" />
                 </div>
-                <button className="header__lang__dropdown-button">
+                <button
+                  className="header__lang__dropdown-button"
+                  onClick={toggleLangPanel}
+                  onBlur={toggleLangPanel}
+                >
                   <img src={vectorImg} alt="vector arrow" />
                 </button>
               </div>
