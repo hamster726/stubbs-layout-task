@@ -90,6 +90,16 @@
 
     .hamburger {
       display: none;
+      width: 26px;
+      height: 20px;
+      span {
+        background-color: #3E3E3E;
+        display: block;
+        width: 100%;
+        height: 3px;
+        margin-bottom: 5px;
+        transition: 0.4s ease all;
+      }
     }
 
     input {
@@ -196,6 +206,93 @@
       }
 
     }
+  }
+
+  &__mobile-menu {
+    position: absolute;
+    width: 100%;
+    top:0;
+    left: -100%;
+    margin-top: 64px;
+    height: calc(100vh - 60px);
+    background: linear-gradient(180deg, #49494A 17.19%, #383836 100%);
+    text-decoration: none;
+    transition: 0.4s ease all;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+
+        .active {
+          color: #AEAEAE;
+        }
+
+        padding: 15px;
+        border-bottom: 1px solid rgba(228, 181, 107, 0.5);
+        position: relative;
+
+        &:after {
+          display: none;
+          width: 11px;
+          height: 21px;
+          content: "";
+          background: center center/cover url("../../images/header/arrow-mobile.svg");
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 15px;
+          z-index: 3;
+        }
+        &:hover {
+          &:after {
+            display: block;
+          }
+          &:first-child {
+            &:after{
+              display: none;
+            }
+          }
+        }
+
+        a{
+          font-family: Raleway, sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 21px;
+          color: #FFFFFF;
+          &:hover {
+            text-decoration: none;
+            color: #AEAEAE;
+          }
+        }
+      }
+    }
+
+    &__lang-list {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      img {
+        cursor: pointer;
+        opacity: 0.3;
+        width: 31px;
+        height: 21px;
+        margin-left: 20px;
+      }
+
+      .active {
+        opacity: 1;
+      }
+
+    }
+  }
+
+  .mobile-menu-active {
+    left: 0;
   }
 
 }

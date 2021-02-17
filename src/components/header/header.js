@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logoImg from "../../images/header/logo.png";
 import uaImg from "../../images/header/lang-ua.png";
 import ruImg from "../../images/header/lang-ru.png";
@@ -56,6 +56,104 @@ const Header = () => {
     }
   };
 
+  const [windowWidth, setWindowWidth] = useState(document.documentElement.clientWidth);
+
+  useEffect(() => {
+    setWindowWidth(document.documentElement.clientWidth);
+  })
+
+  const headerMenu = () => {
+
+    const desktopMenu = () => {
+      return (
+          <div className="header__menu">
+            <ul>
+              <li>
+                <a href="#" className="header__tab active">
+                  Главная
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="header__tab">
+                  Услуги
+                </a>
+              </li>
+              <li>
+                <a href="#" className="header__tab">
+                  Наши работы
+                </a>
+              </li>
+              <li>
+                <a href="#about" className="header__tab">
+                  О нас
+                </a>
+              </li>
+              <li>
+                <a href="#contacts" className="header__tab">
+                  Контакты
+                </a>
+              </li>
+            </ul>
+          </div>
+      )
+    }
+
+    const mobileMenu = () => {
+      return (
+          <>
+            <div className="header__mobile-menu">
+              <ul>
+                <li>
+                  <a href="#" className="header__mobile-menu__tab active">
+                    Меню
+                  </a>
+                </li>
+                <li>
+                  <a href="#services" className="header__mobile-menu__tab">
+                    Услуги
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="header__mobile-menu__tab">
+                    Наши работы
+                  </a>
+                </li>
+                <li>
+                  <a href="#about" className="header__mobile-menu__tab">
+                    О нас
+                  </a>
+                </li>
+                <li>
+                  <a href="#contacts" className="header__mobile-menu__tab">
+                    Контакты
+                  </a>
+                </li>
+              </ul>
+              <div className="header__mobile-menu__lang-list">
+                <img src={ruImg} alt="flag ua" className="active" />
+                <img src={uaImg} alt="flag ua" />
+                <img src={ukImg} alt="flag uk" />
+              </div>
+            </div>
+          </>
+      )
+    }
+    if (windowWidth < 1000) {
+      return mobileMenu();
+    } else {
+
+      return desktopMenu();
+    }
+  }
+
+  const toggleMobileMenu = (e) => {
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.header__mobile-menu');
+
+    hamburger.classList.toggle('hamburger_active');
+    mobileMenu.classList.toggle('mobile-menu-active');
+  }
+
   return (
     <>
       <header className="header">
@@ -64,35 +162,7 @@ const Header = () => {
             <div className="logo">
               <img src={logoImg} alt="logo" />
             </div>
-            <div className="header__menu">
-              <ul>
-                <li>
-                  <a href="#" className="header__tab active">
-                    Главная
-                  </a>
-                </li>
-                <li>
-                  <a href="#services" className="header__tab">
-                    Услуги
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="header__tab">
-                    Наши работы
-                  </a>
-                </li>
-                <li>
-                  <a href="#about" className="header__tab">
-                    О нас
-                  </a>
-                </li>
-                <li>
-                  <a href="#contacts" className="header__tab">
-                    Контакты
-                  </a>
-                </li>
-              </ul>
-            </div>
+            {headerMenu()}
             <div className="header__search-lang-panel">
               <button className="header__search">
                 <img src={searchImg} alt="search" onClick={toggleSearchPanel} />
@@ -113,7 +183,11 @@ const Header = () => {
                   <img src={searchImg} alt="search" />
                 </button>
               </form>
-              <button className="hamburger"></button>
+              <div className="hamburger" onClick={toggleMobileMenu}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
               <div className="header__lang">
                 <div className="header__lang__chosen-lang">
                   <img src={ruImg} alt="flag ru"/>

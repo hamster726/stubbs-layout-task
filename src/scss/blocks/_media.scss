@@ -1,7 +1,8 @@
 @media screen and (max-width: 1200px) {
 
   .container {
-    width: 360px;
+    width: initial;
+    min-width: 360px;
     padding: 16px;
   }
 
@@ -18,6 +19,37 @@
 
     &__wrapper {
       height: 60px;
+      padding: 0;
+    }
+
+    &__lang {
+      display: none;
+    }
+
+    &__search-lang-panel {
+      align-items: center;
+    }
+
+    .hamburger {
+      display: block;
+    }
+
+    .hamburger_active {
+      span {
+        margin-bottom: -3px;
+
+        &:nth-child(1) {
+          transform: translateY(3px) rotate(-45deg);
+        }
+
+        &:nth-child(2) {
+          background-color: transparent;
+        }
+
+        &:nth-child(3) {
+          transform: translateY(3px) rotate(45deg);
+        }
+      }
     }
   }
 
@@ -120,13 +152,17 @@
         height: 2px;
       }
     }
-
+    &__cards {
+      justify-content: center;
+    }
     &__card {
       width: 159px;
       height: 105px;
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-left: 5px;
+      margin-right: 5px;
 
       img {
         width: initial;
@@ -164,7 +200,6 @@
   }
 
   .about {
-
     .title {
       font-weight: 600;
       font-size: 20px;
@@ -177,7 +212,7 @@
     }
 
     &__why {
-      width: 360px;
+      width: 100%;
       height: 236px;
       min-height: initial;
 
@@ -208,7 +243,7 @@
     }
 
     &__advantages {
-      width: 360px;
+      width: 100%;
       height: 236px;
       min-height: initial;
 
