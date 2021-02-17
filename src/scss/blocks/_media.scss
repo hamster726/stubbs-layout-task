@@ -1,0 +1,297 @@
+@media screen and (max-width: 1200px) {
+
+  .container {
+    width: 360px;
+    padding: 16px;
+  }
+
+  .header {
+    .container {
+      padding: 2px 16px;
+    }
+
+    .logo {
+      width: 80px;
+      height: 56px;
+      margin-top: initial;
+    }
+
+    &__wrapper {
+      height: 60px;
+    }
+  }
+
+  .banner {
+    .slick-slider {
+      width: 100%;
+      height: 216px;
+
+      .slick-dots {
+        bottom: 10px;
+
+        li {
+          margin: 0;
+
+          button {
+            &:before {
+              font-size: 11px;
+            }
+          }
+        }
+
+        .slick-active {
+          position: relative;
+
+          button {
+            &:before {
+              font-size: 11px;
+              color: #E4B56B;
+            }
+          }
+        }
+      }
+
+      .slick-list {
+        width: 100%;
+        height: 216px;
+
+        .slick-track {
+          width: 100%;
+          height: 216px;
+
+          .slick-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 216px;
+
+            img {
+              width: auto;
+              height: 216px;
+            }
+          }
+        }
+      }
+    }
+
+    &__title {
+      width: 252px;
+      height: 110px;
+      padding: 16px;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 208px;
+        height: 1px;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #E4B56B;
+      }
+    }
+
+    &__descr {
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 25px;
+    }
+
+
+  }
+
+  .services {
+
+    .gear {
+      display: none;
+    }
+
+    .title {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 23px;
+      text-align: center;
+
+      &:after {
+        width: 60px;
+        height: 2px;
+      }
+    }
+
+    &__card {
+      width: 159px;
+      height: 105px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: initial;
+        height: 100%;
+      }
+
+      &__title {
+        top: 20px;
+        width: 149px;
+        height: 36px;
+        padding-left: 6px;
+        padding-right: 18px;
+
+
+        &:after {
+          width: 2px;
+          height: 23px;
+          right: 10px;
+        }
+      }
+
+      &__descr {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: left;
+
+      }
+
+      &:nth-last-child(-n+2) {
+        width: 159px;
+        height: 105px;
+      }
+    }
+  }
+
+  .about {
+
+    .title {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 23px;
+
+      &:after {
+        width: 60px;
+        height: 2px;
+      }
+    }
+
+    &__why {
+      width: 360px;
+      height: 236px;
+      min-height: initial;
+
+      &__wrapper {
+        width: 326px;
+        height: 180px;
+        padding: 15px 45px 0 16px;
+
+        &:after {
+          right: 20px;
+          width: 2px;
+          height: 100px;
+        }
+      }
+    }
+
+    &__title {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 23px;
+    }
+
+    &__descr {
+      margin-top: 15px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    &__advantages {
+      width: 360px;
+      height: 236px;
+      min-height: initial;
+
+      &__wrapper {
+        width: 326px;
+        height: 180px;
+        padding: 15px 16px 0 65px;
+
+        &:after {
+          left: 20px;
+          width: 2px;
+          height: 100px;
+        }
+      }
+    }
+  }
+
+  .footer {
+    .container {
+      flex-wrap: wrap;
+    }
+
+    &__title {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    &__link {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+
+    &__about {
+      padding-right: 20px;
+      width: initial;
+      flex: initial;
+
+      &:before {
+        width: 1px;
+        height: 55px;
+        left: initial;
+        right: 0;
+        background: #E4B56B;
+      }
+    }
+
+    &__advantages {
+      padding-left: 20px;
+
+      &__menu {
+        display: flex;
+        flex-direction: column;
+        width: initial;
+      }
+    }
+
+    &__contacts {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+
+      div {
+        margin-left: initial;
+      }
+
+      &__social {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .developer {
+      margin-top: 10px;
+    }
+  }
+
+
+}

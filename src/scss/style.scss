@@ -1,3 +1,8 @@
+.container {
+  width: 1180px;
+  margin: 0 auto;
+}
+
 @import "base/variables";
 
 @import "libs/bootstrap-reboot.min.css";
@@ -8,8 +13,6 @@
 @import "blocks/services";
 @import "blocks/about";
 @import "blocks/footer";
+@import "blocks/media";
 
-.container {
-  width: 1180px;
-  margin: 0 auto;
-}
+

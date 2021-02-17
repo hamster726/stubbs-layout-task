@@ -1,5 +1,7 @@
 .banner {
-  position: relative;
+  .slick-active {
+    position: relative;
+  }
 
   &__title {
     position: absolute;
@@ -40,6 +42,7 @@
     .slick-dots {
       bottom: 15px;
       .slick-active {
+        position: relative;
         button {
           &:before {
             font-size: 14px;

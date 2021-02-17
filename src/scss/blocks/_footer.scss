@@ -2,26 +2,6 @@
   padding: 20px 0 20px 0;
   position: relative;
 
-  &:before {
-    content: "";
-    position: absolute;
-    width: 1px;
-    height: 55px;
-    left: 415px;
-    top: 0px;
-    background: #E4B56B;
-  }
-
-  &:after {
-    content: "";
-    position: absolute;
-    width: 1px;
-    height: 55px;
-    right: 445px;
-    top: 0px;
-    background: #E4B56B;
-  }
-
   .container {
     display: flex;
     justify-content: space-between;
@@ -53,6 +33,7 @@
   }
 
   &__about {
+    position: relative;
     width: 325px;
     flex: 33.33%;
     &__menu {
@@ -61,8 +42,19 @@
       justify-content: left;
       flex-direction: column;
     }
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 55px;
+      left: 325px;
+      top: -20px;
+      background: #E4B56B;
+    }
   }
   &__advantages {
+    position: relative;
     flex: 33.33%;
     &__menu {
       margin-top: 20px;
@@ -70,6 +62,16 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 55px;
+      right: 2px  ;
+      top: -20px;
+      background: #E4B56B;
     }
   }
 

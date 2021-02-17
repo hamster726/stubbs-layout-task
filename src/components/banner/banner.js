@@ -6,11 +6,12 @@ const Banner = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 400,
     slidesToShow: 1,
     slidesToScroll: 1,
     adaptiveHeight: false,
     arrows: false,
+    autoplay: false
   };
 
   return (
@@ -18,22 +19,43 @@ const Banner = () => {
       <Slider {...settings}>
         <div>
           <img src={mainBannerImg} alt="banner" />
+
+          <div className="banner__title">
+            <h1 className="banner__descr">
+              Высокоточное изготовление изделий из металла по чертежам
+            </h1>
+          </div>
         </div>
         <div>
           <img src={mainBannerImg} alt="banner" />
+
+          <div className="banner__title">
+            <h1 className="banner__descr">
+              Высокоточное изготовление изделий из металла по чертежам
+            </h1>
+          </div>
         </div>
         <div>
           <img src={mainBannerImg} alt="banner" />
+
+          <div className="banner__title">
+            <h1 className="banner__descr">
+              Высокоточное изготовление изделий из металла по чертежам
+            </h1>
+          </div>
         </div>
         <div>
           <img src={mainBannerImg} alt="banner" />
+
+          <div className="banner__title">
+            <h1 className="banner__descr">
+              Высокоточное изготовление изделий из металла по чертежам
+            </h1>
+          </div>
         </div>
       </Slider>
-      <div className="banner__title">
-        <h1 className="banner__descr">
-          Высокоточное изготовление изделий из металла по чертежам
-        </h1>
-      </div>
+
+
     </div>
   );
 };

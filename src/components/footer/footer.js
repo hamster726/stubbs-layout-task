@@ -54,7 +54,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="footer__contacts">
+        <div className="footer__contacts" id="contacts">
           <div>
             <div className="footer__title">Контактная информация</div>
             <address className="footer__contacts__address">

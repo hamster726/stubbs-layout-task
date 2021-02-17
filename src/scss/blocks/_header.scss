@@ -1,5 +1,6 @@
 .header {
   z-index: 10;
+  position: relative;
   &__wrapper {
     height: 106px;
     display: flex;
@@ -83,8 +84,19 @@
 
 
   &__search-lang-panel {
+    position: relative;
     display: flex;
     align-items: flex-end;
+
+    .hamburger {
+      display: none;
+    }
+
+    input {
+      &:focus {
+        outline: none;
+      }
+    }
   }
 
   &__search {
@@ -105,7 +117,7 @@
     //display: flex;
     position: absolute;
     bottom: -51px;
-    right: -25px;
+    right: 57px;
     justify-content: space-around;
     align-items: center;
     z-index: 1;
@@ -178,6 +190,10 @@
       justify-content: space-between;
       background-color: #3E3E3E50;
       z-index: 1;
+
+      &:focus {
+        outline: none;
+      }
 
     }
   }

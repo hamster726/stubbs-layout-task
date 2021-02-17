@@ -49,7 +49,7 @@ const Services = () => {
 
   return (
     <>
-      <section className="services">
+      <section className="services" id="services">
         <div className="container">
           <h2 className="title">Услуги</h2>
           <div className="services__cards">

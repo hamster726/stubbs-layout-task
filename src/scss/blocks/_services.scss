@@ -17,8 +17,13 @@
     width: 387px;
     height: 201px;
     margin-bottom: 10px;
+    overflow: hidden;
     img {
       width: 100%;
+      transition: 0.3s all;
+      &:hover {
+        transform: scale(1.1);
+      }
     }
     &__title {
       position: absolute;
@@ -67,11 +72,15 @@
     align-items: center;
 
     margin-top: 10px;
+    &:hover {
+      text-decoration: none;
+    }
 
     button {
       width: 379px;
       height: 43px;
       background: #454647;
+      cursor: pointer;
 
       font-family: Raleway, sans-serif;
       font-style: normal;

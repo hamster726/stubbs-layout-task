@@ -10,12 +10,21 @@ const Header = () => {
   const [searchValue, setSearchValue] = useState("");
 
   const toggleSearchPanel = (e) => {
+    console.log("toggle search panel");
     e.stopPropagation();
     const searchPanel = document.querySelector(".header__search-panel");
+    const searchInput = document.querySelector(".header__search-panel input");
+
+    const searchButton = document.querySelector(".header__search");
     if (searchPanel.style.display) {
       searchPanel.style.display = "";
+      searchButton.style.visibility ="";
+
     } else {
       searchPanel.style.display = "flex";
+      searchButton.style.visibility ="hidden";
+      searchInput.focus();
+
     }
   };
 
@@ -23,7 +32,6 @@ const Header = () => {
     e.stopPropagation();
     e.preventDefault();
     setSearchValue("");
-    toggleSearchPanel(e);
 
     //doing search magic
   };
@@ -32,14 +40,19 @@ const Header = () => {
     setSearchValue(e.target.value);
   };
 
-  const toggleLangPanel = (e) => {
+  const toggleLangPanel = (e, status) => {
     e.stopPropagation();
     e.preventDefault();
+
     const langPanel = document.querySelector(".header__lang__lang-list");
-    if (langPanel.style.display) {
+    const langButton = document.querySelector(".header__lang__dropdown-button");
+    if (langPanel.style.display || status === false) {
+      langButton.style.transform = "";
       langPanel.style.display = "";
     } else {
       langPanel.style.display = "flex";
+      langButton.style.transform = "rotate(180deg)";
+      langPanel.focus()
     }
   };
 
@@ -54,57 +67,56 @@ const Header = () => {
             <div className="header__menu">
               <ul>
                 <li>
-                  <a href="" className="header__tab active">
+                  <a href="#" className="header__tab active">
                     Главная
                   </a>
                 </li>
                 <li>
-                  <a href="" className="header__tab">
+                  <a href="#services" className="header__tab">
                     Услуги
                   </a>
                 </li>
                 <li>
-                  <a href="" className="header__tab">
+                  <a href="#" className="header__tab">
                     Наши работы
                   </a>
                 </li>
                 <li>
-                  <a href="" className="header__tab">
+                  <a href="#about" className="header__tab">
                     О нас
                   </a>
                 </li>
                 <li>
-                  <a href="" className="header__tab">
+                  <a href="#contacts" className="header__tab">
                     Контакты
                   </a>
                 </li>
               </ul>
             </div>
             <div className="header__search-lang-panel">
-              <button
-                className="header__search"
-                onClick={toggleSearchPanel}
-                onBlur={toggleSearchPanel}
-              >
-                <img src={searchImg} alt="search" />
-                <form
+              <button className="header__search">
+                <img src={searchImg} alt="search" onClick={toggleSearchPanel} />
+              </button>
+              <form
                   className="header__search-panel"
                   onSubmit={searchMeSomething}
-                >
-                  <input
+              >
+                <input
                     type="text"
                     placeholder="Поиск..."
                     onChange={handleChange}
+                    onBlur={toggleSearchPanel}
                     value={searchValue}
-                  />
-                  <button type="submit">
-                    <img src={searchImg} alt="search" />
-                  </button>
-                </form>
-              </button>
+                    autoFocus
+                />
+                <button type="submit">
+                  <img src={searchImg} alt="search" />
+                </button>
+              </form>
+              <button className="hamburger"></button>
               <div className="header__lang">
                 <div className="header__lang__chosen-lang">
-                  <img src={ruImg} alt="flag ru" />
+                  <img src={ruImg} alt="flag ru"/>
                 </div>
                 <div className="header__lang__lang-list">
                   <img src={uaImg} alt="flag ua" />
@@ -113,7 +125,6 @@ const Header = () => {
                 <button
                   className="header__lang__dropdown-button"
                   onClick={toggleLangPanel}
-                  onBlur={toggleLangPanel}
                 >
                   <img src={vectorImg} alt="vector arrow" />
                 </button>
